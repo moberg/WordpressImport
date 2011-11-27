@@ -1,0 +1,24 @@
+﻿@using WordpressImport.ViewModels
+@model IndexViewModel
+           
+@{
+    Layout.Title = T("Import from Wordpress");
+}
+
+@using (Html.BeginFormAntiForgeryPost("WordpressImport", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary()
+
+    <fieldset>
+		@Html.Label("BlogId", "Select blog to import to:")
+		@Html.DropDownListFor(model => model.BlogId, Model.Blogs)
+
+		<br />
+		<br />
+
+        <input type="file" name="file" />
+        <span class="hint">@T("Wordpress export file.")</span>
+    </fieldset>
+    
+    <button class="primaryAction" type="submit">@T("Import")</button>
+}

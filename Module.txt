@@ -1,0 +1,11 @@
+Name: WordpressImport
+AntiForgery: enabled
+Author: The Big Fat Team
+Website: http://orchardproject.net
+Version: 1.0
+OrchardVersion: 1.0
+Description: Imports blog entries from a Wordpress export file
+Features:
+    WordpressImport:
+        Description: Imports blog entries from a Wordpress export file
+		Dependencies: Orchard.Blogs
